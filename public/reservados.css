@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: #f8f9fa;
+}
+
+#encabezado {
+    background-color: #ffffff;
+    color: #2c3e50;
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 1px solid #e1e8ed;
+    height: 20%;
+}
+
+#encabezado h1 {
+    font-size: 2em;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+#contenedor {
+   background: rgb(80, 35, 153);
+    margin: auto;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.reserva{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;;
+    width: 90%;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 5%;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    height: auto;
+}
+
+.reserva p {
+    width: 100%;
+    margin-bottom: 0.85rem;
+    color: #495057;
+    line-height: 1.6;
+}
+
+.reserva p strong {
+    color: #2c3e50;
+}
+
+.reserva-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-top: 0.75rem;
+    border-top: 1px solid #e9ecef;
+    margin-top: 0.75rem;
+}
+
+.reserva-footer span {
+    color: #495057;
+    font-size: 0.95rem;
+}
+
+.reserva-footer strong {
+    color: #2c3e50;
+}
+
+.reserva:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}

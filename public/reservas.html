@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reserva_style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="encabezado">
+        <h1>Reservar Espacio</h1>
+    </div>
+    
+    <form id="formulario-reserva" class="form-container">
+        <!-- Sección de selección de espacio -->
+        <div class="form-section">
+            <label for="espacio">Selecciona un Espacio:</label>
+            <select name="espacio" id="espacio">
+                <option value="">Selecciona un espacio</option>
+                <option value="sala1">Sala 1</option>
+                <option value="sala2">Sala 2</option>
+                <option value="sala3">Sala 3</option>
+            </select>
+            <div id="contenedor_text"></div>
+        </div>
+        
+        <!-- Sección de detalles de reserva -->
+        <div class="form-section">
+            <label for="actividad">Actividad:</label>
+            <input type="text" id="actividad" placeholder="Ej: Reunión de equipo" required>
+            
+            <label for="usuario">Solicitante:</label>
+            <input type="text" id="usuario" placeholder="Tu nombre" required>
+            
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" placeholder="Detalles adicionales de la reserva" rows="3"></textarea>
+            
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" required>
+            
+            <div class="time-group">
+                <div>
+                    <label for="hora_inicio">Hora de Inicio:</label>
+                    <input type="time" id="hora_inicio" required>
+                </div>
+                <div>
+                    <label for="hora_fin">Hora de Fin:</label>
+                    <input type="time" id="hora_fin" required>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Botón de reserva -->
+        <button type="submit" id="reservar" class="btn-reservar">Reservar</button>
+    </form>
+    
+    <script src="reeservas.js"></script>
+</body>
+</html>
