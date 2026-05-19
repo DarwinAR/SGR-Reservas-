@@ -1,59 +1,148 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="reserva_style.css">
-    <title>Document</title>
+    <link rel="icon" type="image/png" href="assets/images/logo_ucc.png">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/reservas.css">
+    <title>Reservar Espacio - SGR UCC</title>
 </head>
 <body>
-    <div id="encabezado">
-        <h1>Reservar Espacio</h1>
-    </div>
-    
-    <form id="formulario-reserva" class="form-container">
-        <!-- Sección de selección de espacio -->
-        <div class="form-section">
-            <label for="espacio">Selecciona un Espacio:</label>
-            <select name="espacio" id="espacio">
-                <option value="">Selecciona una sala</option>
-                <option value="sala1">Sala 1</option>
-                <option value="sala2">Sala 2</option>
-                <option value="sala3">Sala 3</option>
-            </select>
-            <div id="contenedor_text"></div>
+
+    <div class="reservas-layout" id="vista-formulario">
+
+        <div class="reservas-imagen">
+            <img src="assets/images/formulario-lateral.png" alt="Universidad Cooperativa de Colombia">
+            <div class="imagen-fade"></div>
         </div>
-        
-        <!-- Sección de detalles de reserva -->
-        <div class="form-section">
-            <label for="actividad">Actividad:</label>
-            <input type="text" id="actividad" placeholder="Ej: Reunión de equipo" required>
-            
-            <label for="usuario">Solicitante:</label>
-            <input type="text" id="usuario" placeholder="Tu nombre" required>
-            
-            <label for="descripcion">Descripción:</label>
-            <textarea id="descripcion" placeholder="Detalles adicionales de la reserva" rows="3"></textarea>
-            
-            <label for="fecha">Fecha:</label>
-            <input type="date" id="fecha" required>
-            
-            <div class="time-group">
-                <div>
-                    <label for="hora_inicio">Hora de Inicio:</label>
-                    <input type="time" id="hora_inicio" required>
+
+        <!-- Lado derecho: panel del formulario -->
+        <div class="reservas-panel">
+            <header class="panel-header">
+                <a href="index.html" class="panel-back">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+                    Inicio
+                </a>
+                <h1>Nueva Reserva</h1>
+                <div class="panel-spacer"></div>
+            </header>
+
+            <div class="panel-body">
+                <form id="formulario-reserva" novalidate>
+
+                    <div class="campo">
+                        <label for="espacio">Espacio</label>
+                        <select name="espacio" id="espacio" required>
+                            <option value="">Selecciona una sala</option>
+                            <option value="sala1">Sala 1</option>
+                            <option value="sala2">Sala 2</option>
+                            <option value="sala3">Sala 3</option>
+                        </select>
+                        <span class="campo-error" id="error-espacio"></span>
+                    </div>
+
+                    <!-- Acordeon descripcion de sala -->
+                    <div class="sala-detalle" id="sala-detalle" hidden>
+                        <button type="button" class="sala-toggle" id="sala-toggle">
+                            <span id="sala-toggle-titulo">Detalles de la sala</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                        <div class="sala-contenido" id="sala-contenido"></div>
+                    </div>
+
+                    <div class="campo">
+                        <label for="actividad">Actividad</label>
+                        <input type="text" id="actividad" placeholder="Ej: Reunión de equipo" required>
+                        <span class="campo-error" id="error-actividad"></span>
+                    </div>
+
+                    <div class="campo">
+                        <label for="usuario">Solicitante</label>
+                        <input type="text" id="usuario" placeholder="Tu nombre completo" required>
+                        <span class="campo-error" id="error-usuario"></span>
+                    </div>
+
+                    <div class="campo">
+                        <label for="descripcion">Descripción <span class="opcional">(opcional)</span></label>
+                        <textarea id="descripcion" placeholder="Detalles adicionales" rows="2"></textarea>
+                    </div>
+
+                    <div class="campo">
+                        <label for="fecha">Fecha</label>
+                        <input type="date" id="fecha" required>
+                        <span class="campo-error" id="error-fecha"></span>
+                    </div>
+
+                    <div class="campo-grupo">
+                        <div class="campo">
+                            <label for="hora_inicio">Hora de inicio</label>
+                            <select id="hora_inicio" required>
+                                <option value="">Selecciona</option>
+                            </select>
+                            <span class="campo-error" id="error-hora_inicio"></span>
+                        </div>
+                        <div class="campo" id="campo-hora-fin" hidden>
+                            <label for="hora_fin">Hora de fin</label>
+                            <select id="hora_fin" required>
+                                <option value="">Selecciona</option>
+                            </select>
+                            <span class="campo-error" id="error-hora_fin"></span>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+            <footer class="panel-footer">
+                <button type="button" id="btn-confirmar" class="btn-primary btn-confirmar">Confirmar Reserva</button>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Pantalla de exito -->
+    <div class="reservas-layout exito-layout" id="vista-exito" hidden>
+        <div class="reservas-imagen">
+            <img src="assets/images/formulario-lateral.png" alt="UCC">
+            <div class="imagen-fade"></div>
+        </div>
+        <div class="reservas-panel exito-panel">
+            <div class="exito-contenido">
+                <div class="exito-icon">
+                    <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
                 </div>
-                <div>
-                    <label for="hora_fin">Hora de Fin:</label>
-                    <input type="time" id="hora_fin" required>
+                <h2>¡Reserva confirmada!</h2>
+                <div class="exito-detalles" id="exito-detalles"></div>
+                <div class="exito-acciones">
+                    <a href="reservados.html" class="btn-primary">Ver todas las reservas</a>
+                    <a href="reservas.html" class="btn-link">Hacer otra reserva</a>
+                    <a href="index.html" class="btn-link">Volver al inicio</a>
                 </div>
             </div>
         </div>
-        
-        <!-- Botón de reserva -->
-        <button type="submit" id="reservar" class="btn-reservar">Reservar</button>
-    </form>
-    
-    <script src="reeservas.js"></script>
+    </div>
+
+    <!-- Modal de conflicto -->
+    <div class="modal-overlay" id="modal-conflicto" hidden>
+        <div class="modal-conflicto-card">
+            <button type="button" class="modal-cerrar" id="modal-cerrar-conflicto">&times;</button>
+            <div class="modal-conflicto-icon">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+                </svg>
+            </div>
+            <h3 id="conflicto-titulo">Espacio no disponible</h3>
+            <p id="conflicto-mensaje"></p>
+            <div id="conflicto-disponibles"></div>
+            <button type="button" class="btn-primary conflicto-aceptar" id="conflicto-aceptar">Aceptar</button>
+        </div>
+    </div>
+
+    <script src="js/reservas.js"></script>
 </body>
 </html>

@@ -1,0 +1,31 @@
+/* Superficies */
+
+:root {
+
+  --surface-bg-base:      var(--color-neutral-50);
+  --surface-bg-surface:   var(--color-neutral-100);
+  --surface-bg-card:      var(--color-neutral-0);
+  --surface-bg-elevated:  var(--color-neutral-0);
+  --surface-bg-overlay:   rgba(0, 0, 0, 0.5);
+  --surface-bg-disabled:  var(--color-neutral-200);
+
+  --surface-bg-primary:       var(--color-primary-500);
+  --surface-bg-primary-light: var(--color-primary-50);
+  --surface-bg-primary-dark:  var(--color-primary-700);
+
+  --surface-bg-secondary:       var(--color-secondary-500);
+  --surface-bg-secondary-light: var(--color-secondary-50);
+
+  --surface-bg-accent:       var(--color-accent-500);
+  --surface-bg-accent-light: var(--color-accent-50);
+
+  --text-on-surface:       var(--color-neutral-900);
+  --text-on-surface-muted: var(--color-neutral-600);
+  --text-on-surface-faint: var(--color-neutral-500);
+  --text-on-primary:       var(--color-neutral-0);
+  --text-on-dark:          var(--color-neutral-0);
+
+  --text-primary:   var(--color-primary-500);
+  --text-secondary: var(--color-secondary-500);
+  --text-accent:    var(--color-accent-600);
+}

@@ -1,0 +1,64 @@
+/* Tipografia */
+
+:root {
+
+  --font-family-primary:   'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-family-secondary: 'Georgia', 'Times New Roman', serif;
+  --font-family-mono:      'Consolas', 'Courier New', monospace;
+
+  --font-size-xs:   0.75rem;
+  --font-size-sm:   0.875rem;
+  --font-size-md:   1rem;
+  --font-size-lg:   1.125rem;
+  --font-size-xl:   1.25rem;
+  --font-size-2xl:  1.5rem;
+  --font-size-3xl:  2rem;
+  --font-size-4xl:  2.5rem;
+
+  --font-weight-regular:  400;
+  --font-weight-medium:   500;
+  --font-weight-semibold: 600;
+  --font-weight-bold:     700;
+
+  --line-height-tight:    1.2;
+  --line-height-normal:   1.5;
+  --line-height-relaxed:  1.75;
+
+  --letter-spacing-tight:  -0.025em;
+  --letter-spacing-normal:  0;
+  --letter-spacing-wide:    0.025em;
+  --letter-spacing-wider:   0.05em;
+  --letter-spacing-tight:  -0.025em;
+  --letter-spacing-normal:  0;
+  --letter-spacing-wide:    0.025em;
+  --letter-spacing-wider:   0.05em;
+}
+
+.label-xs-regular   { font-size: var(--font-size-xs);  font-weight: var(--font-weight-regular);  line-height: var(--line-height-normal); }
+.label-xs-medium    { font-size: var(--font-size-xs);  font-weight: var(--font-weight-medium);   line-height: var(--line-height-normal); }
+.label-xs-semibold  { font-size: var(--font-size-xs);  font-weight: var(--font-weight-semibold); line-height: var(--line-height-normal); }
+.label-xs-bold      { font-size: var(--font-size-xs);  font-weight: var(--font-weight-bold);     line-height: var(--line-height-normal); }
+
+.label-small-regular   { font-size: var(--font-size-sm);  font-weight: var(--font-weight-regular);  line-height: var(--line-height-normal); }
+.label-small-medium    { font-size: var(--font-size-sm);  font-weight: var(--font-weight-medium);   line-height: var(--line-height-normal); }
+.label-small-semibold  { font-size: var(--font-size-sm);  font-weight: var(--font-weight-semibold); line-height: var(--line-height-normal); }
+.label-small-bold      { font-size: var(--font-size-sm);  font-weight: var(--font-weight-bold);     line-height: var(--line-height-normal); }
+
+.label-medium-regular  { font-size: var(--font-size-md);  font-weight: var(--font-weight-regular);  line-height: var(--line-height-normal); }
+.label-medium-medium   { font-size: var(--font-size-md);  font-weight: var(--font-weight-medium);   line-height: var(--line-height-normal); }
+.label-medium-semibold { font-size: var(--font-size-md);  font-weight: var(--font-weight-semibold); line-height: var(--line-height-normal); }
+.label-medium-bold     { font-size: var(--font-size-md);  font-weight: var(--font-weight-bold);     line-height: var(--line-height-normal); }
+
+.label-large-regular   { font-size: var(--font-size-lg);  font-weight: var(--font-weight-regular);  line-height: var(--line-height-tight); }
+.label-large-medium    { font-size: var(--font-size-lg);  font-weight: var(--font-weight-medium);   line-height: var(--line-height-tight); }
+.label-large-semibold  { font-size: var(--font-size-lg);  font-weight: var(--font-weight-semibold); line-height: var(--line-height-tight); }
+.label-large-bold      { font-size: var(--font-size-lg);  font-weight: var(--font-weight-bold);     line-height: var(--line-height-tight); }
+
+.label-xl-regular  { font-size: var(--font-size-xl);  font-weight: var(--font-weight-regular);  line-height: var(--line-height-tight); }
+.label-xl-medium   { font-size: var(--font-size-xl);  font-weight: var(--font-weight-medium);   line-height: var(--line-height-tight); }
+.label-xl-semibold { font-size: var(--font-size-xl);  font-weight: var(--font-weight-semibold); line-height: var(--line-height-tight); }
+.label-xl-bold     { font-size: var(--font-size-xl);  font-weight: var(--font-weight-bold);     line-height: var(--line-height-tight); }
+
+.heading-small     { font-size: var(--font-size-2xl); font-weight: var(--font-weight-medium);   line-height: var(--line-height-tight); letter-spacing: var(--letter-spacing-wide); }
+.heading-medium    { font-size: var(--font-size-3xl); font-weight: var(--font-weight-medium);   line-height: var(--line-height-tight); letter-spacing: var(--letter-spacing-wide); }
+.heading-large     { font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold);     line-height: var(--line-height-tight); letter-spacing: var(--letter-spacing-wide); }
